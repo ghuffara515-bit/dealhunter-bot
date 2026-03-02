@@ -3,7 +3,7 @@ import requests
 import os
 
 # Telegram Bot Token
-TOKEN = "8657762610:AAEPhVPlejvZLE2M5FAD1ps14dUoCROLD3o"
+TOKEN = os.environ.get("TOKEN")
 
 bot = telebot.TeleBot(TOKEN)
 
@@ -13,8 +13,6 @@ def send_welcome(message):
 
 @bot.message_handler(commands=['deals'])
 def send_deals(message):
-    # This is a placeholder for actual AliExpress API integration.
-    # In a real scenario, you'd fetch these from an API.
     deals_text = (
         "🔥 *Today's Top AliExpress Deals* 🔥\n\n"
         "1. Wireless Bluetooth Earbuds - $5.99\n"
